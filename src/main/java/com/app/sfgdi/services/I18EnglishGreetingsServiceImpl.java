@@ -1,4 +1,13 @@
 package com.app.sfgdi.services;
 
-public class I18EnglishGreetingsServiceImpl {
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
+
+@Profile("EN")
+@Service("i18nService")
+public class I18EnglishGreetingsServiceImpl implements GreetingService{
+    @Override
+    public String sayGreeting() {
+        return "Hello from i18n English Service";
+    }
 }
